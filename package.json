@@ -1,0 +1,10 @@
+{
+  "name": "y8irpl",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "main": "public/index.html",
+  "dependencies": {
+    "typescript": "4.6.2"
+  }
+}
