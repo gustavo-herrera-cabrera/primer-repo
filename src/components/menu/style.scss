@@ -1,0 +1,71 @@
+$menu-max-width: 300px;
+$menu-min-width: 50px;
+
+$btn-opened-m: 0 1rem 1rem 0;
+$btn-closed-m: 0 -1.8rem 1rem 0;
+
+@keyframes opening-menu {
+	from {
+		width: $menu-min-width;
+	}
+	to {
+		width: $menu-max-width;
+	}
+}
+@keyframes closing-menu {
+	from {
+		width: $menu-max-width;
+	}
+	to {
+		width: $menu-min-width;
+	}
+}
+
+@keyframes closing-btn {
+	from {
+		margin: $btn-opened-m;
+	}
+	to {
+		margin: $btn-closed-m;
+	}
+}
+
+@keyframes opening-btn {
+	from {
+		margin: $btn-closed-m;
+	}
+	to {
+		margin: $btn-opened-m;
+	}
+}
+
+.menu-container {
+	max-width: $menu-max-width;
+	min-width: $menu-min-width;
+	height: 100%;
+
+	.menu {
+		height: 100%;
+
+		.toggle-button {
+			align-self: end;
+			margin: 1rem;
+		}
+
+		.toggle-button.open {
+			animation: opening-btn 1s forwards;
+		}
+
+		.toggle-button.close {
+			animation: closing-btn 1s forwards;
+		}
+	}
+}
+
+.menu-container.open {
+	animation: opening-menu 1s forwards;
+}
+
+.menu-container.close {
+	animation: closing-menu 1s forwards;
+}

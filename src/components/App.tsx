@@ -1,12 +1,19 @@
-export const App = () => {
-  return (
-    <>
-      <h1>Te reviento.</h1>
-      <form action="./" method="POST">
-        <input type="text" name="name" />
-        <input type="submit" value="Submit" />
+import { Paper, Stack } from "@mui/material";
+import { useState } from "react";
+import { Box } from "@mui/system";
+import { Menu } from "./menu/Menu";
 
-      </form>
-    </>
-  )
-}
+export const App = () => {
+	return (
+		<>
+			{/* Roboto Font */}
+			<link
+				rel="stylesheet"
+				href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+			/>
+			<Box width="100%" height="100%">
+				<Menu />
+			</Box>
+		</>
+	);
+};
