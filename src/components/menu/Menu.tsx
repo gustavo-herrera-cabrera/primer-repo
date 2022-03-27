@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
-import { Fab, Paper, Stack } from "@mui/material";
+import { Fab, MenuItem, Paper, Stack } from "@mui/material";
 import "./style.scss";
+import { Box } from '@mui/system';
 
 export const Menu = () => {
 	const [open, setOpen] = useState(true);
@@ -48,6 +49,9 @@ export const Menu = () => {
 				>
 					{open ? "<" : ">"}
 				</Fab>
+				<Stack className="options-container">
+					<MenuItem />
+				</Stack>
 			</Stack>
 		</Paper>
 	);

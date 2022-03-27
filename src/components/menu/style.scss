@@ -1,8 +1,8 @@
 $menu-max-width: 300px;
 $menu-min-width: 50px;
 
-$btn-opened-m: 0 1rem 1rem 0;
-$btn-closed-m: 0 -1.8rem 1rem 0;
+$btn-open-margin: 1rem 1rem 1rem 0;
+$btn-closed-margin: 1rem -1.8rem 1rem 0;
 
 @keyframes opening-menu {
 	from {
@@ -23,19 +23,19 @@ $btn-closed-m: 0 -1.8rem 1rem 0;
 
 @keyframes closing-btn {
 	from {
-		margin: $btn-opened-m;
+		margin: $btn-open-margin;
 	}
 	to {
-		margin: $btn-closed-m;
+		margin: $btn-closed-margin;
 	}
 }
 
 @keyframes opening-btn {
 	from {
-		margin: $btn-closed-m;
+		margin: $btn-closed-margin;
 	}
 	to {
-		margin: $btn-opened-m;
+		margin: $btn-open-margin;
 	}
 }
 
@@ -58,6 +58,14 @@ $btn-closed-m: 0 -1.8rem 1rem 0;
 
 		.toggle-button.close {
 			animation: closing-btn 1s forwards;
+		}
+
+		.options-container {
+			height: 100%;
+			overflow-y: auto;
+			overflow-x: hidden;
+			padding: 0;
+			margin: 0; 
 		}
 	}
 }
