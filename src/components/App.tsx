@@ -1,19 +1,36 @@
-import { Paper, Stack } from "@mui/material";
-import { useState } from "react";
-import { Box } from "@mui/system";
+import { Paper } from "@mui/material";
+import "./style.scss";
 import { Menu } from "./menu/Menu";
+import { Item } from "./menu/Item";
+import { PersonOutlined } from "@mui/icons-material";
 
 export const App = () => {
 	return (
 		<>
-			{/* Roboto Font */}
-			<link
-				rel="stylesheet"
-				href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-			/>
-			<Box width="100%" height="100%">
-				<Menu />
-			</Box>
+			<Paper id="main" variant="elevation" elevation={6}>
+				<Menu
+					entries={[
+						{
+							title: "Te reviento 1",
+							icon: <PersonOutlined />,
+							onClick: () =>
+								console.log("Kachigga, my nigga 1."),
+						},
+						{
+							title: "te reviento 2",
+							icon: <PersonOutlined />,
+							onClick: () =>
+								console.log("Kachigga, my nigga 2."),
+						},
+						{
+							title: "te reviento 3",
+							icon: <PersonOutlined />,
+							onClick: () =>
+								console.log("Kachigga, my nigga 3."),
+						},
+					]}
+				/>
+			</Paper>
 		</>
 	);
 };

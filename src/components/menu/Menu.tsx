@@ -1,9 +1,13 @@
-import React, { useRef, useState } from "react";
-import { Fab, MenuItem, Paper, Stack } from "@mui/material";
+import { useRef, useState } from "react";
+import { Fab, Paper, Stack } from "@mui/material";
 import "./style.scss";
-import { Box } from '@mui/system';
+import { ItemList } from "./ItemList";
 
-export const Menu = () => {
+type Props = {
+	entries: Entry[];
+};
+
+export const Menu = ({ entries }: Props) => {
 	const [open, setOpen] = useState(true);
 	const menuContainer = useRef<HTMLDivElement>(null);
 	const menuButton = useRef<HTMLButtonElement>(null);
@@ -35,23 +39,25 @@ export const Menu = () => {
 			className="menu-container"
 			ref={menuContainer}
 			elevation={6}
+			square
 		>
 			<Stack
 				spacing={2}
 				direction="column-reverse"
 				className="menu"
 			>
+				{/* Toggle button */}
 				<Fab
 					ref={menuButton}
 					className="toggle-button"
 					color="primary"
 					onClick={toggleOpen}
+					title={open ? "Cerrar" : "Abrir"}
 				>
 					{open ? "<" : ">"}
 				</Fab>
-				<Stack className="options-container">
-					<MenuItem />
-				</Stack>
+
+				<ItemList entries={entries} />
 			</Stack>
 		</Paper>
 	);

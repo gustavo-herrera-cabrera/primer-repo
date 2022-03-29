@@ -48,6 +48,9 @@ $btn-closed-margin: 1rem -1.8rem 1rem 0;
 		height: 100%;
 
 		.toggle-button {
+			height: 3.5rem;
+			width: 3.5rem;
+			
 			align-self: end;
 			margin: 1rem;
 		}
@@ -61,11 +64,13 @@ $btn-closed-margin: 1rem -1.8rem 1rem 0;
 		}
 
 		.options-container {
-			height: 100%;
-			overflow-y: auto;
-			overflow-x: hidden;
 			padding: 0;
-			margin: 0; 
+			margin: 0;
+			height: 100%;
+
+			.menu-item {
+				height: 200px;
+			}
 		}
 	}
 }
